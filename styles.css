@@ -1,0 +1,72 @@
+.racing-sans-one-regular {
+    font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.orbitron-uniquifier {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+body {
+    background-color: rgb(55, 69, 80);
+    margin: 0;
+}
+
+.title__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    margin-top: 2vh;
+    padding-bottom: 1vh;
+}
+
+.title {
+    font-family: 'Racing Sans One';
+    font-size: 12vh;
+    color: white;
+    margin: 0;
+}
+
+.disctiption {
+    font-family: 'Orbitron';
+    color: white;
+    margin: 0;
+    font-size: 2vh;
+}
+
+.big_api__container {
+    border-top: 40px solid rgb(196, 0, 0);
+    border-bottom: 40px solid rgb(196, 0, 0);
+    background-color: rgb(241, 241, 241);
+    padding: 60px 120px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.button__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice__button {
+    color: red;
+    font-size: 3vh;
+    font-family: 'Orbitron';
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 0;
+    border-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.choice__button:hover {
+    background-color: rgba(0, 0, 0, 0.096);
+}

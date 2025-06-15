@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1API</title>
+    <link rel="icon" href="/pictures/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+    <script src="changeDiv.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="title__container">
+            <h1 class="title">Formula 1 API Test</h1>
+            <p class="disctiption">This is a test project to learn the API</p>
+        </div>
+        <div class="big_api__container">
+            <div class="button__container">
+                <button class="choice__button" id="driver_button" onclick="showDiv(1)">Driver</button>
+                <button class="choice__button" id="track_button" onclick="showDiv(2)">Track</button>
+                <button class="choice__button" id="team_button" onclick="showDiv(3)">Team</button>
+            </div>
+            <div class="content__container">
+                <div class="content">
+                    <div class="driver_content" id="div1" hidden>
+                        <div class="driver_data__input">
+                            <h3>Enter some data for the driver.</h3>
+                            <div>
+                                <span>Enter the driver's last name</span>
+                                <input type="text">
+                                <span>Enter the driver's number</span>
+                                <input type="number">
+                                <span>Enter the driver's diplay name</span>
+                                <input type="text">
+                            </div>
+                            <button>Search!</button>
+                        </div>
+                        <div class="driver_data__output">
+                            <h3>Information</h3>
+                            <div>
+                                <img>
+                                <span>name</span>
+                            </div>
+                            <div>
+                                <span>Team</span>
+                                <ul>
+                                    <li>wins</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="track_content" id="div2" hidden>
+                        <div class="track_data__input">
+                            <h3>Enter some data for the race track.</h3>
+                            <div>
+                                <span>Enter the track's name</span>
+                                <input type="text">
+                                <span>Enter the country</span>
+                                <input type="text">
+                                <span>Enter the year</span>
+                                <input type="number">
+                            </div>
+                            <button>Search!</button>
+                        </div>
+                        <div class="track_data__output">
+                            <h3>Information</h3>
+                            <div>
+                                <span>Winner</span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team_content" id="div3" hidden>
+                        <div class="team_data__input">
+                            <h3>Enter some data for the driver.</h3>
+                            <div>
+                                <span>Enter the teams's name</span>
+                                <input type="text">
+                            </div>
+                            <button>Search!</button>
+                        </div>
+                        <div class="team_data__output">
+                            <h3>Information</h3>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="test">
+            <input type="number" id="driNum">
+            <button onclick="fetchData()">Fetch Driver</button><br>
+            <div id="divAPI"></div>
+        </div>-->
+    </main>
+</body>
