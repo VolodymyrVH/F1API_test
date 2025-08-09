@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1API</title>
-    <link rel="icon" href="/pictures/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="index.js" defer></script>
     <script src="changeDiv.js" defer></script>
@@ -102,19 +102,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="team_content" id="div3" hidden>
-                        <div class="team_data__input">
-                            <h3>Input.</h3>
-                            <div>
-                                <span>Team Name</span>
-                                <input type="text" id="team">
+                    <div class="driver_content" id="div3" hidden>
+                        <div class="driver_data__input">
+                            <h3>Input</h3>
+                            <div class="input__container">
+                                <p class="p_input">Team Name</p>
+                                <input class="input_field" type="text" id="team">
                             </div>
-                            <button onclick="fetchTeam()">Search!</button>
+                            <button class="search__button" onclick="fetchTeam()">Search!</button>
                         </div>
-                        <div class="team_data__output">
+                        <div class="driver_data__output">
                             <h3>Information</h3>
-                            <p></p>
-                            <div>
+                            <div class="output__container">
+                                <p id="team_name_p" class="div_output"></p>
+                                <div id="drivers_team" class="div_output"></div>
                             </div>
                         </div>
                     </div>

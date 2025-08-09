@@ -131,6 +131,33 @@ async function fetchTeam() {
       unique.push(driver);
     }
   }
+
+  const TeamName = teamInfo[0].team_name;
+  document.getElementById("team_name_p").textContent = TeamName;
+
+  const list = document.getElementById("drivers_team");
+  list.innerHTML = "";
+
+  for (const driverDisplay of unique) {
+  const driverName = driverDisplay.full_name;
+  const driverNumber = driverDisplay.driver_number;
+  const driverCountry = driverDisplay.country_code;
+
+  let row = document.createElement("div");
+  row.className = "driver-row";
+  let nmDriver = document.createElement("div");
+  nmDriver.textContent = driverName;
+  let numDriver = document.createElement("div");
+  numDriver.textContent = driverNumber;
+  let cnDriver = document.createElement("div");
+  cnDriver.textContent = driverCountry;
+
+  row.appendChild(nmDriver);
+  row.appendChild(numDriver);
+  row.appendChild(cnDriver);
+
+  list.appendChild(row);
+}
   
   console.log(unique);
 }
