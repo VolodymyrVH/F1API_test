@@ -1,23 +1,3 @@
-async function fetchData() { //function for call
-  try{ //use this
-    const driver_number = document.getElementById("driNum").value; //getting from html input value
-
-    const response = await fetch(`https://api.openf1.org/v1/drivers?driver_number=${driver_number}`); //search this value in library
-
-    if(!response.ok){
-      throw new Error('Coukd not fetch resource'); //throw error
-    }
-
-    const data = await response.json(); //getting response in json format
-    console.log(data);
-    const driverName = data[0].full_name; //searching what we need
-    document.getElementById("divAPI").textContent = driverName; //show the driver name
-  }
-  catch(error){ // if error throw error
-    console.error(error);
-  }
-}
-
 async function fetchDriverData() {
   const driverLastName = document.getElementById("driverName__input").value;
   const driverNumber = document.getElementById("driverNum__input").value;
@@ -89,28 +69,34 @@ async function fetchTrackData() {
   const race_json = await race_data.json();
   const sessionKey = race_json[0].session_key;
 
-  const position_data = await fetch(`https://api.openf1.org/v1/position?session_key=${sessionKey}`);
+  const position_data = await fetch(`https://api.openf1.org/v1/session_result?session_key=${sessionKey}`);
   const finish_grid = await position_data.json();
 
-  const latestPositionByDriver = {};
+  const drivers_data = await fetch(`https://api.openf1.org/v1/drivers?session_key=${sessionKey}`);
+  const drivers_list = await drivers_data.json();
 
-  for (const pos of finish_grid) {
-    const driverNumber = pos.driver_number;
+  console.log(finish_grid);
+  let list = document.getElementById("driverList");
+  list.innerHTML = "";
 
-    if (!latestPositionByDriver[driverNumber] || pos.data > latestPositionByDriver[driverNumber].data) {
-      latestPositionByDriver[driverNumber] = pos;
-    }
+  for (const driver of finish_grid) {
+    const position = driver.position;
+    const driver_number = driver.driver_number;
+
+    let driverInfo = null;
+    for (let i = 0; i < drivers_list.length; i++) {
+      if (drivers_list[i].driver_number === driver_number) {
+        driverInfo = drivers_list[i];
+        break;
+      }
   }
+    const driver_acronym = driverInfo.name_acronym;
+    const driver_team = driverInfo.team_name;
 
-  const findGrid = Object.values(latestPositionByDriver).sort((a, b) => a.position - b.position);
+    let grid = document.createElement('li');
+    grid.textContent = `${position} ${driver_acronym} ${driver_team}`;
 
-  const driverGrid = document.getElementById("driverList");
-  driverGrid.innerHTML = "";
-  for (const driver of findGrid) {
-    const div = document.createElement("div");
-    div.className = "grid-item";
-    div.innerHTML = `P${driver.position}${driver.driver_number}${driver.last_name}`;
-    driverGrid.appendChild(div);
+    list.appendChild(grid);
   }
 }
 
@@ -139,25 +125,25 @@ async function fetchTeam() {
   list.innerHTML = "";
 
   for (const driverDisplay of unique) {
-  const driverName = driverDisplay.full_name;
-  const driverNumber = driverDisplay.driver_number;
-  const driverCountry = driverDisplay.country_code;
+    const driverName = driverDisplay.full_name;
+    const driverNumber = driverDisplay.driver_number;
+    const driverCountry = driverDisplay.country_code;
 
-  let row = document.createElement("div");
-  row.className = "driver-row";
-  let nmDriver = document.createElement("div");
-  nmDriver.textContent = driverName;
-  let numDriver = document.createElement("div");
-  numDriver.textContent = driverNumber;
-  let cnDriver = document.createElement("div");
-  cnDriver.textContent = driverCountry;
+    let row = document.createElement("div");
+    row.className = "driver-row";
+    let nmDriver = document.createElement("div");
+    nmDriver.textContent = driverName;
+    let numDriver = document.createElement("div");
+    numDriver.textContent = driverNumber;
+    let cnDriver = document.createElement("div");
+    cnDriver.textContent = driverCountry;
 
-  row.appendChild(nmDriver);
-  row.appendChild(numDriver);
-  row.appendChild(cnDriver);
+    row.appendChild(nmDriver);
+    row.appendChild(numDriver);
+    row.appendChild(cnDriver);
 
-  list.appendChild(row);
-}
+    list.appendChild(row);
+  }
   
   console.log(unique);
 }
