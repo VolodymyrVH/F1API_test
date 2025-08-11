@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1API</title>
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+    <script src="changeDiv.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="title__container">
+            <h1 class="title">Formula 1 API Test</h1>
+            <p class="disctiption">This is a test project to learn the API</p>
+        </div>
+        <div class="big_api__container">
+            <div class="button__container">
+                <button class="choice__button" id="button1" onclick="showDiv(1)">Driver</button>
+                <button class="choice__button" id="button2" onclick="showDiv(2)">Track</button>
+                <button class="choice__button" id="button3" onclick="showDiv(3)">Team</button>
+            </div>
+            <div class="content__container">
+                <div class="content">
+                    <div class="driver_content" id="div1" hidden>
+                        <div class="driver_data__input">
+                            <h3>Input</h3>
+                            <div class="input__container">
+                                <div class="div_input">
+                                    <p class="p_input">Last Name</p>
+                                    <input class="input_field" type="text" id="driverName__input">
+                                </div>
+                                <div class="div_input">
+                                    <p class="p_input">Driver's Number</p>
+                                    <input class="input_field" type="number" id="driverNum__input">
+                                </div>
+                                <div class="div_input">
+                                    <p class="p_input">Acronym</p>
+                                    <input class="input_field" type="text" maxlength="3" id="driverAcron__input">
+                                </div>
+                            </div>
+                            <button class="search__button" onclick="fetchDriverData()">Search!</button>
+                        </div>
+                        <div class="driver_data__output">
+                            <h3>Information</h3>
+                            <div class="output__container">
+                                <div class="div_output_avatar">
+                                    <img src="" id="headshot_driver" class="headshot_driver">
+                                </div>
+                                <div class="div_output">
+                                    <p id="drivers_name"></p>
+                                    <p>Number: <span id="driver_number"></span></p>
+                                    <p>Country: <span id="driver_country"></span></p>
+                                    <p>Current Team: <span id="driver_team"></span></p>
+                                    <p>Acronym: <span id="driver_acronym"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="track_content" id="div2" hidden>
+                        <div class="track_data__input">
+                            <div class="driver_data__input">
+                                <h3>Input</h3>
+                                <div class="input__container">
+                                    <div class="div_input">
+                                        <p class="p_input">Country</p>
+                                        <input class="input_field" type="text" id="countryName__input">
+                                    </div>
+                                    <div class="div_input">
+                                        <p class="p_input">Circut Name</p>
+                                        <input class="input_field" type="text" id="circutName__input">
+                                    </div>
+                                    <div class="div_input">
+                                        <p class="p_input">Year</p>
+                                        <input class="input_field" type="text" maxlength="4" inputmode="numeric" pattern="\d*" id="year__input">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="search__button" onclick="fetchTrackData()">Search!</button>
+                        </div>
+                        <div class="driver_data__output">
+                            <h3>Information</h3>
+                            <div class="output__container">
+                                <div class="div_output">
+                                    <p id="track_name"></p>
+                                    <p><span id="track_full_name"></span></p>
+                                    <p>Country: <span id="track_country"></span></p>
+                                    <p>Finish Grid<span id="driver_team"></span></p>
+                                    <ul id="driverList"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="driver_content" id="div3" hidden>
+                        <div class="driver_data__input">
+                            <h3>Input</h3>
+                            <div class="input__container">
+                                <p class="p_input">Team Name</p>
+                                <input class="input_field" type="text" id="team">
+                            </div>
+                            <button class="search__button" onclick="fetchTeam()">Search!</button>
+                        </div>
+                        <div class="driver_data__output">
+                            <h3>Information</h3>
+                            <div class="output__container">
+                                <p id="team_name_p" class="div_output"></p>
+                                <div id="drivers_team" class="div_output"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>

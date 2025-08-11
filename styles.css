@@ -1,0 +1,185 @@
+.racing-sans-one-regular {
+    font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.orbitron-uniquifier {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+.boldonse-regular {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    background-color: rgb(55, 69, 80);
+    margin: 0;
+}
+
+h3 {
+    font-family: 'Orbitron';
+    font-weight: bold;
+    font-size: 3vh;
+    text-align: center;
+}
+
+input[type=number],
+input[type=text] {
+    padding-left: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.title__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    margin-top: 2vh;
+    padding-bottom: 1vh;
+}
+
+.title {
+    font-family: 'Racing Sans One';
+    font-size: 12vh;
+    color: white;
+    margin: 0;
+}
+
+.disctiption {
+    font-family: 'Orbitron';
+    color: white;
+    margin: 0;
+    font-size: 2vh;
+}
+
+.big_api__container {
+    border-top: 40px solid rgb(196, 0, 0);
+    border-bottom: 40px solid rgb(196, 0, 0);
+    background-color: rgb(241, 241, 241);
+    padding: 60px 120px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.button__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice__button {
+    color: red;
+    font-size: 3vh;
+    font-family: 'Orbitron';
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 0;
+    border-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.choice__button:hover {
+    background-color: rgba(0, 0, 0, 0.096);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.driver_content {
+    display: flex;
+    flex-direction: row;
+}
+
+.driver_data__input {
+    display: flex;
+    flex-direction: column;
+    border-right: red 3px solid;
+    padding: 0 10vh 0 10vh;
+}
+
+.p_input {
+    font-family: 'Orbitron';
+    font-size: 2vh;
+}
+
+.search__button {
+    color: rgb(255, 255, 255);
+    font-size: 3vh;
+    font-family: 'Orbitron';
+    background-color: rgb(255, 0, 0);
+    border-radius: 0;
+    border-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.input_field {
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: 1px 1px 8px #0000004d inset;
+    font-size: 2vh;
+    outline: none;
+    height: 3.5vh;
+    width: 35vh;
+}
+
+.input__container {
+    margin-bottom: 5vh;
+}
+
+.driver_data__output { 
+    padding: 0 10vh 0 10vh;
+}
+
+.output__container {
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
+}
+
+.div_output_avatar {
+    background-color: rgb(29, 37, 44);
+    border-radius: 8px;
+    border: red 3px solid;
+}
+
+.headshot_driver {
+    image-rendering: auto;
+    width: 30vh;
+}
+
+.div_output {
+    font-family: "Boldonse";
+}
+
+#drivers_team {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.driver-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    padding: 5px;
+}
